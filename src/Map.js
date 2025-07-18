@@ -3,6 +3,7 @@ import { supabase } from "./supabaseClient";
 import { motion, AnimatePresence } from "framer-motion";
 import { locationData as defaultLocationData } from "./MapNpcsQuests";
 
+
 const syncInitialData = async () => {
   const { data: existing, error } = await supabase.from("locations").select("name, x, y");
 

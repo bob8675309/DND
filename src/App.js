@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { locationData } from './MapNpcsQuests';
-
+import ItemDeck from './ItemDeck';
 import { QuestEditor } from "./QuestEditor";
 import { NPCEditor } from "./NPCEditor";
 import { Map } from "./Map";
@@ -21,6 +21,11 @@ const Merchants = () => <div className="p-10"><h2 className="text-2xl font-semib
 const Journal = () => <div className="p-10"><h2 className="text-2xl font-semibold mb-4">Journal</h2></div>;
 const NPCs = () => <div className="p-10"><h2 className="text-2xl font-semibold mb-4">NPCs</h2><NPCEditor /></div>;
 
+// Placeholder components for routes
+const Items = () => <div className="p-10"><ItemDeck /></div>;
+const Spells = () => <div className="p-10"><h2 className="text-2xl font-semibold mb-4">Spells</h2></div>;
+const Bestiary = () => <div className="p-10"><h2 className="text-2xl font-semibold mb-4">Bestiary</h2></div>;
+
 const Nav = () => (
   <nav className="flex justify-between items-center p-5 bg-gray-900 text-white shadow-md">
     <h1 className="text-xl font-bold">The Shattered Veil</h1>
@@ -33,6 +38,9 @@ const Nav = () => (
       <Link to="/merchants" className="hover:text-teal-400">Merchants</Link>
       <Link to="/journal" className="hover:text-teal-400">Journal</Link>
       <Link to="/npcs" className="hover:text-teal-400">NPCs</Link>
+      <Link to="/items" className="hover:text-teal-400">Items</Link>
+      <Link to="/spells" className="hover:text-teal-400">Spells</Link>
+      <Link to="/bestiary" className="hover:text-teal-400">Bestiary</Link>
     </div>
   </nav>
 );
@@ -46,9 +54,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<Map />} />
           <Route path="/characters" element={<Characters />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="/spells" element={<Spells />} />
+          <Route path="/bestiary" element={<Bestiary />} />
           <Route path="/quests" element={<Quests />} />
-          <Route path="/rift" element={<RiftPressure />} />
-          <Route path="/merchants" element={<Merchants />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/npcs" element={<NPCs />} />
         </Routes>
@@ -56,6 +65,7 @@ export default function App() {
     </Router>
   );
 }
+
 
 
 
