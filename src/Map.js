@@ -44,7 +44,7 @@ const syncInitialData = async () => {
   }
 };
 
-export const Map = () => {
+  const Map = () => {
   const [locations, setLocations] = React.useState([]);
   const [selected, setSelected] = React.useState(null);
   const mapRef = React.useRef(null);
@@ -304,4 +304,9 @@ export const Map = () => {
       </AnimatePresence>
     </div>
   );
+
+
 };
+  export default Map;
+
+
